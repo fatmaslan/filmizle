@@ -46,25 +46,15 @@ const Registerpage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>)=> {
     setIsLoading(true);
-    try {
-      const response = await fetch("",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({
-          email:values.email,
-          username:values.username,
-          password:values.password,
-      }),
-    });
-    const data = await response.json();
-    if (response.ok) {
-      const token = data.accessToken;
-      if(token){
-        localStorage.setItem("token",token);
-      }
+     try{ 
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ values})
+    );
+      
       toast.success("Başariyla kayit oldunuz");
       router.push("/login");
-    }
+    
     }catch (error) {
       console.error("Kayit sirasinda hata oluştu",error)
       toast.error("Bir hata olustu tekrar deneyiniz");

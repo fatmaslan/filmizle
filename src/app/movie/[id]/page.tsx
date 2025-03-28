@@ -19,7 +19,7 @@ const MovieDetail = async ({ params }) => {
       <div className="mx-auto p-3 flex justify-center gap-4">
         <Image
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title}
+          alt={movie.id}
           width={200}
           height={200}
           className="rounded-lg mt-5 mx-auto"
@@ -43,11 +43,11 @@ const MovieDetail = async ({ params }) => {
           <div className="flex items-center text-white font-light mt-5 space-x-5">
             <div className="flex items-center space-x-1">
               <IoEarth className="text-xl" />
-              <span>{movie.original_language.toUpperCase()}</span>
+              <span>{movie.original_language}</span>
             </div>
             <div className="flex items-center space-x-1">
               <TbChartBarPopular className="text-xl" />
-              <span>{movie.popularity.toFixed(1)}</span>
+              <span>{movie.popularity}</span>
             </div>
             <div className="flex items-center space-x-1">
               <CiVideoOn className="text-xl" />

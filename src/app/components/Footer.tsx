@@ -6,7 +6,7 @@ import { FaXTwitter } from 'react-icons/fa6'
 const Footer = () => {
   return (
  
-      <div className="bg-blue-950 p-5 h-50  ">
+      <div className="bg-gray-600 p-5 h-50  ">
       <div className=" max-w-6xl mx-auto mt-5 flex justify-between ">
         <Link href={"/contact"} className="flex-1 text-white">
           <h3 className="font-bold text-lg mb-2">Müşteri Hizmetleri</h3>
